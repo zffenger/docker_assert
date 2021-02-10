@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  portainer:
+    container_name: "portainer"
+    image: portainer/portainer-ce
+    restart: always
+    environment:
+      TZ: "Asia/Shanghai"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    ports:
+      - "9000:9000"
+volumes:
+  portainer_data:{}
+
+
